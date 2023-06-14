@@ -32,14 +32,14 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-void MatrixExchange(int[,] matrix, int number = 1)
+void MatrixExchange(int[,] matrix, int number = 0, int n = 0, int m = 0)
 {
         for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-        if (i > 0 || j > 0)
-        number = 0;
+        if (i != n && j != m)
+        number = matrix[i, j];
         // matrix[i, j] = matrix[i, j];
         }
     }
@@ -73,7 +73,7 @@ Console.Write("Введите позицию элемента в массиве:
 int[] n = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
 int[,] m = new int[n[0], n[1]];
 Console.WriteLine();
-Console.WriteLine($"элемент массива = {MatrixExchange}");
+Console.WriteLine($"элемент массива = {MatrixExchange(matrix)}");
 
 Console.WriteLine($"такого элемента массива нет");
 
