@@ -49,3 +49,4 @@ int[,] matrix = new int[size[0], size[1]];
 InputMatrix(matrix);
 PrintMatrix(matrix);
 Console.WriteLine($"Результат: {MatrixExchange(matrix)}");
+
