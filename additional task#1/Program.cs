@@ -65,3 +65,4 @@ PrintMatrix(matrix);
 Console.WriteLine();
 ReverseMatrix(matrix);
 PrintMatrix(matrix);
+ // Как перевернуть весь массив, а не только первую и последнюю строкку?
