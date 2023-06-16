@@ -29,17 +29,16 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int MatrixExchange(int[,] matrix, int average = 0, int sum = 0)
+int MatrixExchange(int[,] matrix)
 {
-    
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    int average = 0;
+    int sum = 0;
+    for (int j = 0; j < matrix.GetLength(1); j++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            sum += j;
-            average = sum / i;
-        }
+        sum += j;
+        average = sum / j;
     }
+    
 return average;
 }
 
@@ -50,3 +49,4 @@ int[,] matrix = new int[size[0], size[1]];
 InputMatrix(matrix);
 PrintMatrix(matrix);
 Console.WriteLine($"Результат: {MatrixExchange(matrix)}");
+
