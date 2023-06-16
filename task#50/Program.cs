@@ -38,26 +38,21 @@ void MatrixExchange(int[,] matrix, int number = 0, int n = 0, int m = 0)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-        if (i != n && j != m)
+        if(matrix[i, j] == n & matrix[i, j] == m)
+        //if (i > n && j > m)
         number = matrix[i, j];
+
         // matrix[i, j] = matrix[i, j];
         }
+        return;
+        //Console.WriteLine($"элемент массива =  {matrix}");
+
+        //else if (matrix[i, j] > number && matrix[i, j] < number);
+        
+        Console.WriteLine($"такого элемента массива нет");
     }
-}
-
-// string SearchNumber(int[,] matrix, int number = 1)
-// {
-//     foreach (int element in matrix)
     
-//     if (element == number)
-// // return "yes";
-//     Console.WriteLine("элемент массива = ");
-//     else (element > number);
-//     Console.WriteLine($"такого элемента массива нет");
-// // return "no";
-// }
-
-
+}
 
 Console.Clear();
 Console.Write("Введите размер массива: ");
@@ -66,15 +61,15 @@ int[,] matrix = new int[size[0], size[1]];
 InputMatrix(matrix);
 Console.WriteLine();
 PrintMatrix(matrix);
-MatrixExchange(matrix);
-// SearchNumber(matrix);
+//MatrixExchange(matrix);
 Console.WriteLine();
 Console.Write("Введите позицию элемента в массиве: ");
 int[] n = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray();
 int[,] m = new int[n[0], n[1]];
 Console.WriteLine();
-Console.WriteLine($"элемент массива = {MatrixExchange(matrix)}");
-
-Console.WriteLine($"такого элемента массива нет");
-
+MatrixExchange(matrix);
+Console.WriteLine($"элемент массива =  {matrix}");
+// Console.WriteLine($"элемент массива = {MatrixExchange(matrix)}");
+//     else (matrix[i, j] > number && matrix[int, j] < number);
+// Console.WriteLine($"такого элемента массива нет");
 
