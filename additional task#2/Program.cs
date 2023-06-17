@@ -48,3 +48,55 @@
 
 //                  WW
 //                  BW	                            2
+
+
+void InputMatrixFirst(int[,] matrixFirst)
+{
+    for (int i = 0; i < matrixFirst.GetLength(0); i++)
+    {
+        string? input = Convert.ToString(Console.ReadLine()!);
+        for (int j = 0; j < input.Length; j++)
+        {
+            matrixFirst[i, j] = input[j];
+        }
+    }
+}
+ 
+ 
+void InputMatrixSecond(int[,] matrixSecond)
+{
+    for (int i = 0; i < matrixSecond.GetLength(0); i++)
+    {
+        string input = Convert.ToString(Console.ReadLine()!);
+        for (int j = 0; j < input.Length; j++)
+        {
+            matrixSecond[i, j] = input[j];
+        }
+    }
+}
+ 
+ 
+void ReleaseMatrix(int[,] matrixFirst, int[,] matrixSecond)
+{
+    int count = 0;
+    for (int i = 0; i < matrixSecond.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrixSecond.GetLength(1); j++)
+        {
+            if (matrixFirst[i, j] == matrixSecond[i, j])
+                count++;
+        }
+    }
+    Console.WriteLine($"{count}");
+}
+ 
+ 
+Console.Clear();
+Console.Write("Введите кол-во строк и столбцов: ");
+int[] num = Console.ReadLine()!.Split().Select(x => int.Parse(x)).ToArray(); // ввод двух чисел в одну строку
+int[,] matrixFirst = new int[num[0], num[1]];
+int[,] matrixSecond = new int[num[0], num[1]];
+InputMatrixFirst(matrixFirst);
+Console.WriteLine();
+InputMatrixSecond(matrixSecond);
+ReleaseMatrix(matrixFirst, matrixSecond);
